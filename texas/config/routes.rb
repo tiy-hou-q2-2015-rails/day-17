@@ -1,14 +1,23 @@
 Rails.application.routes.draw do
 
   root 'cities#index' # 'controller#action'
-  
-  get '/austin' => 'cities#austin', as: 'austin'
 
-  get '/houston' => 'cities#houston', as: 'houston'
+  # "/cities/austin" match
+  # "/cities/houston" match
+  # "/cities" no-match
+  # "" match to root
 
-  get '/marfa' => 'cities#marfa', as: 'marfa'
+  # get "/contact" => "contact/new", as: :contact
 
-  get '/bryan' => 'cities#bryan', as: "bryan"
+  get "cities/:city_name" => "cities#show", as: :city
+
+  # get '/austin' => 'cities#austin', as: 'austin'
+  #
+  # get '/houston' => 'cities#houston', as: 'houston'
+  #
+  # get '/marfa' => 'cities#marfa', as: 'marfa'
+  #
+  # get '/bryan' => 'cities#bryan', as: "bryan"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

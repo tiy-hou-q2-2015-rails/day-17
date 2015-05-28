@@ -5,7 +5,7 @@
 
 <ul class="list-group">
   <% @cities.each do |city| %>
-    <li class="list-group-item"><%= link_to city.capitalize, city %></li>
+    <li class="list-group-item"><%= link_to city.capitalize, city_path(city_name: city) %></li>
   <% end %>
 </ul>
 
@@ -15,7 +15,7 @@
   <% @cities.each do |city| %>
 
     <div class="col-xs-6 col-md-3">
-      <%= link_to city, class: 'thumbnail' do %>
+      <%= link_to city_path(city_name: city), class: 'thumbnail' do %>
         <%= image_tag "#{city}.jpg" %>
       <% end %>
     </div>
