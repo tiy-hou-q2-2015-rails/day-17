@@ -1,0 +1,10 @@
+<h1>Contacts#list</h1>
+
+<p>You have <%= pluralize @contacts.count, "contact" %></p>
+
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <li><%= link_to contact["Name"], contact_path(name: contact["Name"].parameterize) %></li>
+  <% end %>
+</ul>
