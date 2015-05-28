@@ -1,0 +1,26 @@
+
+<div class="page-header">
+  <h1>Welcome <small>cities!</small></h1>
+</div>
+
+<ul class="list-group">
+  <% @cities.each do |city| %>
+    <li class="list-group-item"><%= link_to city.capitalize, city %></li>
+  <% end %>
+</ul>
+
+
+<div class="row">
+
+  <% @cities.each do |city| %>
+
+    <div class="col-xs-6 col-md-3">
+      <%= link_to city, class: 'thumbnail' do %>
+        <%= image_tag "#{city}.jpg" %>
+      <% end %>
+    </div>
+
+  <% end %>
+
+
+</div>
